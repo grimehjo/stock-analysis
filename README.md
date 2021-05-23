@@ -53,51 +53,62 @@ As you can see from the above screenshots, the execution time was much faster be
 
 For example, here is part of the original script before the refactoring. As you can see I have a For loop inside another For loop:
 
-For i = 0 To 11
-       ticker = tickers(i)
-       totalVolume = 0
-       
-       '5) loop through rows in the data
-       
-    Worksheets(yearValue).Activate
 
+        '4) Loop through tickers
+   
+       For i = 0 To 11
+              ticker = tickers(i)
+              totalVolume = 0
+
+
+
+              '5) loop through rows in the data
        
-       For j = 2 To RowCount
+        Worksheets(yearValue).Activate
+    
+              For j = 2 To RowCount
        
-           '5a) Get total volume for current ticker
+                     '5a) Get total volume for current ticker
            
-           If Cells(j, 1).Value = ticker Then
+                      If Cells(j, 1).Value = ticker Then
 
-               totalVolume = totalVolume + Cells(j, 8).Value
+                     totalVolume = totalVolume + Cells(j, 8).Value
 
-           End If
+                     End If
            
-           '5b) get starting price for current ticker
+                     '5b) get starting price for current ticker
            
-           If Cells(j - 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
+                     If Cells(j - 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
 
-               startingPrice = Cells(j, 6).Value
+                     startingPrice = Cells(j, 6).Value
 
-           End If
+                     End If
 
-           '5c) get ending price for current ticker
+                     '5c) get ending price for current ticker
            
-           If Cells(j + 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
+                     If Cells(j + 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
 
-               endingPrice = Cells(j, 6).Value
+                     endingPrice = Cells(j, 6).Value
 
-           End If
-       Next j
+                     End If
+              Next j
        
-       '6) Output data for current ticker
+              '6) Output data for current ticker
        
-       Worksheets("All Stocks Analysis").Activate
-       Cells(4 + i, 1).Value = ticker
-       Cells(4 + i, 2).Value = totalVolume
-       Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
-
-   Next i
+              Worksheets("All Stocks Analysis").Activate
+              Cells(4 + i, 1).Value = ticker
+              Cells(4 + i, 2).Value = totalVolume
+              Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
+       
+       Next i
+       
+In my refactored code, I changed it so the loop is not inside another loop and everything is inside one single loop.
 
 ### Summary: In a summary statement, address the following questions.
 #### What are the advantages or disadvantages of refactoring code?
+
+Advantages are that it makes it more efficient, disadvantage is that it makes the physical code that is typed longer and it means that one error in the code can cause a lot more damage in many ways.
+
 #### How do these pros and cons apply to refactoring the original VBA script?
+
+As I mentioned earlier, stock analysts often have to perform their stock analysis on a much larger set of data than just 12 stocks over only 2 years, when you are performing analysis on a larger set of data it is very important for it to run efficiently and smoothly.
