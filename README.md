@@ -32,9 +32,11 @@ Original 2018 Stock Analysis Execution Time:
 <img width="158" alt="2018OriginalTime" src="https://user-images.githubusercontent.com/80979705/119277289-c6633b00-bbec-11eb-8683-2ea666b7fb19.PNG">
 
 Refactored Code 2017 Execution Time:
+
 <img width="156" alt="VBA_Challenge_2017" src="https://user-images.githubusercontent.com/80979705/119277302-dbd86500-bbec-11eb-95fa-60cf6dcbd9e7.PNG">
 
 Refactored Code 2018 Execution Time:
+
 <img width="157" alt="VBA_Challenge_2018" src="https://user-images.githubusercontent.com/80979705/119277311-e72b9080-bbec-11eb-8b7a-4ea628efb1f4.PNG">
 
 ### Summary: In a summary statement, address the following questions.
