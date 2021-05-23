@@ -15,6 +15,8 @@ Because of this, I then created a VBA code to analyse all the stocks at once. I 
 
 ### Results: Using images and examples of your code, compare the stock performance between 2017 and 2018, as well as the execution times of the original script and the refactored script.
 
+The stock performance was much better in 2017 compared to 2018. In 2017, 11 out of the 12 stocks analysed returned a profit. In 2018, only 2 out of the 12 stocks analysed returned a profit.
+
 2017 Stock Analysis:
 
 <img width="148" alt="Analysis2017" src="https://user-images.githubusercontent.com/80979705/119277191-30c7ab80-bbec-11eb-8fc7-d51863273dca.PNG">
